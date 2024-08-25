@@ -1,6 +1,6 @@
 import React from "react";
 
-const Cart = (productsCart = [])=>
+const Cart = (productsCart)=>
 {
     return(
         <div>

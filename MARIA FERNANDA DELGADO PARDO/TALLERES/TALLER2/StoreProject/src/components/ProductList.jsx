@@ -1,19 +1,20 @@
 import React from "react";
 import ProductItem from "./ProductItem";
+import {Card, CardHeader, CardBody, CardFooter} from "@nextui-org/react";
 
-const ProductList = ({products = [], onViewDetails})=>
+const ProductList = ({products, onViewDetails})=>
     {
         return (
-            <div>
+            <div id="div-list">
                 {products.map((product) => (
                     <ul>
-                        <li>
+                        <li key={product.id}>
                             <ProductItem
-                            key={product.id}
                             name={product.name}
                             price={product.price}
+                            image={product.image}
                             description={product.description}
-                            onViewDetails={onViewDetails}
+                            onViewDetails= {()=>{}}
                             />
                         </li>
                     </ul>

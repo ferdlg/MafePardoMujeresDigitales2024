@@ -2,12 +2,13 @@ import React from "react";
 import ProductDetails from "./ProductDetails";
 
 
-const ProductItem = ({name, price, description, onViewDetails})=>
+const ProductItem = ({name, image, price, description, onViewDetails})=>
 {
     return (
-        <div>
-            <h3>{name}</h3>
-            <h4>{price}</h4>
+        <div id="div-item">
+            <p>{name}</p>
+            <p>${price}</p>
+            <img src={image} />
             <button type="button" onClick={onViewDetails}>Ver detalles</button>
         </div>
     )
