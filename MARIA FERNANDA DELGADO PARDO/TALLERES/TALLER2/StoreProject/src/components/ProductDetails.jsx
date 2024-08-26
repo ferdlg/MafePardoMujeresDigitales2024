@@ -1,5 +1,4 @@
 import React from "react";
-import ProductItem from "./ProductItem";
 import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, image} from "@nextui-org/react";
 
 
@@ -9,10 +8,10 @@ const ProductDetails = ({selectProduct, addToCart, onClose})=>
         return null;
     }
     console.log('Detalles del producto: ', selectProduct)
-    const {isOpen, onOpen, onOpenChange} = useDisclosure();
+    const {onOpen, } = useDisclosure();
     return(
         <>
-        <Button onPress={onOpen}>Open Modal</Button>
+        <Button onPress={onOpen} hidden='true'>Open Modal</Button>
         <Modal isOpen={Boolean(selectProduct)} onClose={onClose} isDismissable={false} isKeyboardDismissDisabled={true}>        <ModalContent>
             {(onClose) => (
               <>
