@@ -4,7 +4,7 @@ import ProductItem from "./ProductItem";
 const ProductList = ({products, onViewDetails})=>
     {
         return (
-            <div id="div-list">
+            <div className="gap-2 grid grid-cols-2 sm:grid-cols-4">
                 {products.map((product) => (
                     <ul>
                         <li key={product.id}>

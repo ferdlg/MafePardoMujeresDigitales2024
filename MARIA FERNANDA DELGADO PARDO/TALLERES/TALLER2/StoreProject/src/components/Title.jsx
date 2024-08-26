@@ -19,7 +19,7 @@ const Title = ()=>{
             <NavbarBrand>
                 <NavbarItem>
                     <Link color="foreground" href="#">
-                        logo
+                    logo
                     </Link>
                 </NavbarItem>
             </NavbarBrand>

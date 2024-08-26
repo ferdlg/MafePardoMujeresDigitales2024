@@ -1,6 +1,6 @@
 import React from "react";
 
-const Cart = ({productsCart})=>
+const Cart = ({productsCart, removeProduct})=>
 {
     const totalCost =productsCart.reduce((p, product)=>{
         return p + product.price
@@ -13,7 +13,7 @@ const Cart = ({productsCart})=>
             <div>
                 {productsCart.map((product) => (
                 <div key={product.id}>
-                <p>{product.name}</p>
+                <p>{product.name}</p> <button onClick={()=> removeProduct(product.id)}>Remove</button>
                 <p>${product.price}</p>
                 </div>
                 ))}

@@ -1,16 +1,27 @@
 import React from "react";
-import ProductDetails from "./ProductDetails";
+import {Card, CardBody, CardFooter, Image, Button} from "@nextui-org/react";
 
 
 const ProductItem = ({name, image, price, description, onViewDetails})=>
 {
+
     return (
-        <div id="div-item">
-            <p>{name}</p>
-            <p>${price}</p>
-            <img src={image} />
-            <button type="button" onClick={()=> onViewDetails({name, image, price, description})}>Ver detalles</button>
-        </div>
+        <Card shadow="sm" isPressable onPress={() => console.log("item pressed")}>
+          <CardBody className="overflow-visible p-0">
+            <Image
+              shadow="sm"
+              radius="lg"
+              width="100%"
+              className="w-full object-cover h-[140px]"
+              src={image}
+            />
+          </CardBody>
+          <CardFooter className="text-small justify-between">
+            <b>{name}</b>
+            <p className="text-default-500">{price}</p>
+            <Button auto  onClick={()=> onViewDetails({name, image, price, description})}>Ver detalles</Button>
+          </CardFooter>
+        </Card>
     )
 };
 

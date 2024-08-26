@@ -27,6 +27,14 @@ function App() {
     const AddToCart = (item) =>{
         setCart([...cart, item]);
     };
+
+    const RemoveFromCart = (itemId) =>{
+      setCart(cart.filter(item => item.id !== itemId));
+    }
+
+    const onClose = () =>{
+      setSelectProduct(null);
+    }
     
     
   return (
@@ -42,10 +50,12 @@ function App() {
         (<ProductDetails 
           selectProduct={selectProduct}
           addToCart={AddToCart}
+          onClose={onClose}
         />)}
 
         <Cart
           productsCart={cart}
+          removeProduct={RemoveFromCart}
         /> 
       </div>
       

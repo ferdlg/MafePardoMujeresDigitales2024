@@ -1,24 +1,41 @@
 import React from "react";
 import ProductItem from "./ProductItem";
+import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, image} from "@nextui-org/react";
 
-const ProductDetails = ({selectProduct, addToCart})=>
+
+const ProductDetails = ({selectProduct, addToCart, onClose})=>
 {
-    
     if(!selectProduct){
         return null;
     }
     console.log('Detalles del producto: ', selectProduct)
+    const {isOpen, onOpen, onOpenChange} = useDisclosure();
     return(
-        <div>
-                <ProductItem
-                    name = {selectProduct.name}
-                    image = {selectProduct.image}
-                    price={selectProduct.price}
-                    description={selectProduct.description}
-                    />  
-                <button type="button" onClick={()=> addToCart(selectProduct)}>Agregar al carrito</button>
-        </div>
-        
+        <>
+        <Button onPress={onOpen}>Open Modal</Button>
+        <Modal isOpen={Boolean(selectProduct)} onClose={onClose} isDismissable={false} isKeyboardDismissDisabled={true}>        <ModalContent>
+            {(onClose) => (
+              <>
+                <ModalHeader className="flex flex-col gap-1">{selectProduct.name}</ModalHeader>
+                <ModalBody>
+                    <img src={selectProduct.image} />
+                    <p>{selectProduct.description}</p>
+                    <p>{selectProduct.price}</p>
+                
+                </ModalBody>
+                <ModalFooter>
+                    <Button color="danger" variant="light" onPress={onClose}>
+                    Close
+                    </Button>
+                  <Button color="primary" onClick={()=> addToCart(selectProduct)}>
+                    Agregar al carrito
+                  </Button>
+                </ModalFooter>
+              </>
+            )}
+          </ModalContent>
+        </Modal>
+      </>
     )
 };
 
