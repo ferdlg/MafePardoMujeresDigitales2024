@@ -6,8 +6,9 @@ const ProductItem = ({name, image, price, description, onViewDetails})=>
 {
 
     return (
-        <Card shadow="sm" isPressable onPress={() => console.log("item pressed")}>
+        <Card shadow="sm" isPressable id="card-item">
           <CardBody className="overflow-visible p-0">
+          <b>{name}</b>
             <Image
               shadow="sm"
               radius="lg"
@@ -17,7 +18,6 @@ const ProductItem = ({name, image, price, description, onViewDetails})=>
             />
           </CardBody>
           <CardFooter className="text-small justify-between">
-            <b>{name}</b>
             <p className="text-default-500">{price}</p>
             <Button auto  onClick={()=> onViewDetails({name, image, price, description})}>Ver detalles</Button>
           </CardFooter>
