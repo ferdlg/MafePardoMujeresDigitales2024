@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import ProductList from './components/ProductList';
 import Title from './components/Title';
-import {NextUIProvider} from '@nextui-org/react'
+import ProductDetails from './components/ProductDetails';
+import Cart from './components/Cart';
 
 function App() {
     const products = [{id: 0, image:'https://i.pinimg.com/564x/10/f8/96/10f896c4bbfa6625cb8fcc4f2d56082e.jpg' , name: 'Bolso Clásico de Cuero',price: 1200,description: 'Bolso de cuero genuino con diseño clásico y elegante.'},
@@ -19,6 +20,7 @@ function App() {
     const [cart, setCart] = useState([]);
     
     const onViewDetails = (product)=>{
+        console.log('Producto seleccionado: ', product)
         setSelectProduct(product)
     };
 
@@ -35,19 +37,16 @@ function App() {
           products={products}
           onViewDetails={onViewDetails}
         />
-        {/* <ProductDetails
+      
+        { selectProduct &&
+        (<ProductDetails 
           selectProduct={selectProduct}
-          AddToCart={AddToCart}
-        />
-        {selectProduct && (
-                    <ProductDetails
-                        selectProduct={selectProduct}
-                        AddToCart={AddToCart}
-                    />
-                )}
+          addToCart={AddToCart}
+        />)}
+
         <Cart
-          itemsCart={cart}
-        /> */}
+          productsCart={cart}
+        /> 
       </div>
       
     </>

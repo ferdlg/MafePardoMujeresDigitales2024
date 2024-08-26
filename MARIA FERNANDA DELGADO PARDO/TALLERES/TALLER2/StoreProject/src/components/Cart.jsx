@@ -1,12 +1,18 @@
 import React from "react";
 
-const Cart = (productsCart)=>
+const Cart = ({productsCart})=>
 {
     return(
         <div>
-            {productsCart.map((product)=>(
-                <><p>{product.name}</p><p>{product.price}</p></>
-            ))}
+            <div>
+                <h1>Carrito</h1>
+            </div>
+            {productsCart.map((product) => (
+            <div key={product.id}>
+            <p>{product.name}</p>
+            <p>${product.price}</p>
+            </div>
+      ))}
         </div>
     )
 };

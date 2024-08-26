@@ -9,7 +9,7 @@ const ProductItem = ({name, image, price, description, onViewDetails})=>
             <p>{name}</p>
             <p>${price}</p>
             <img src={image} />
-            <button type="button" onClick={onViewDetails}>Ver detalles</button>
+            <button type="button" onClick={()=> onViewDetails({name, image, price, description})}>Ver detalles</button>
         </div>
     )
 };

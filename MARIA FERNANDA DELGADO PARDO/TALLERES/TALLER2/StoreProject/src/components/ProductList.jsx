@@ -1,6 +1,5 @@
 import React from "react";
 import ProductItem from "./ProductItem";
-import {Card, CardHeader, CardBody, CardFooter} from "@nextui-org/react";
 
 const ProductList = ({products, onViewDetails})=>
     {
@@ -14,7 +13,7 @@ const ProductList = ({products, onViewDetails})=>
                             price={product.price}
                             image={product.image}
                             description={product.description}
-                            onViewDetails= {()=>{}}
+                            onViewDetails= {()=>onViewDetails(product)}
                             />
                         </li>
                     </ul>
