@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 * {
   margin: 0;
   padding: 0;
@@ -5,40 +8,40 @@
 }
 
 :root{
-  --color-content-list : #A68A7F;
+  --color-content-list : #a68a7f75;
   --color-button :#7f1d1d; 
   --color-content-item:#ffedd5;
   --color-nav-bar: #BF4343;
   --color-text: #EEEAE5;
+  
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-body{
-  margin: 5%;
+Button{
+  background-color: var(--color-button);
 }
-#nav-bar{
+
+#btn-hidden{
+  display: none;
+}
+
+#Navbar{
   background-color: var(--color-nav-bar);
-  color: var(--color-text);
   border-radius: 50px;
-  padding: 2%;
-}
-
-#nav-bar h1{
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
 }
 
 #div-list{
+  margin: 5% 5% 0% 5%;
   background-color: var(--color-content-list);
-  padding: 2%;
-  margin-top: 5%;
-  border-radius: 5%;
+  padding: 5%;
+  border-radius: 10px;
+ 
 }
-#card-item{
-  background-color: var(--color-content-item);
-  padding: 2rem;
-  border-radius: 2%;
+h1{
+  font: 2.5em Georgia;
+}
+
+b{
+  padding: 1%;
+  margin: 1% 0% 1% 0%;
 }

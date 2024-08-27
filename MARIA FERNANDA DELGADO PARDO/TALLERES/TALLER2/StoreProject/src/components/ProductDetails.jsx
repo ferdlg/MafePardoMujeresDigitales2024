@@ -11,22 +11,22 @@ const ProductDetails = ({selectProduct, addToCart, onClose})=>
     const {onOpen, } = useDisclosure();
     return(
         <>
-        <Button onPress={onOpen} hidden='true'>Open Modal</Button>
-        <Modal isOpen={Boolean(selectProduct)} onClose={onClose} isDismissable={false} isKeyboardDismissDisabled={true}>        <ModalContent>
+        <Button onPress={onOpen} hidden:true id='btn-hidden'>Open Modal</Button>
+        <Modal isOpen={Boolean(selectProduct)} onClose={onClose} isDismissable={false} isKeyboardDismissDisabled={true} >        <ModalContent>
             {(onClose) => (
               <>
                 <ModalHeader className="flex flex-col gap-1">{selectProduct.name}</ModalHeader>
-                <ModalBody>
+                <ModalBody className="bg-Amber-100 shadow-inner">
                     <img src={selectProduct.image} />
                     <p>{selectProduct.description}</p>
-                    <p>{selectProduct.price}</p>
+                    <p>$ {selectProduct.price}</p>
                 
                 </ModalBody>
                 <ModalFooter>
-                    <Button color="danger" variant="light" onPress={onClose}>
-                    Close
+                    <Button className="bg-stone-50 text-stone-500" variant="light" onPress={onClose}>
+                    Cerrar
                     </Button>
-                  <Button color="primary" onClick={()=> addToCart(selectProduct)}>
+                  <Button className="bg-red-800 text-stone-50" onClick={()=> addToCart(selectProduct)}>
                     Agregar al carrito
                   </Button>
                 </ModalFooter>
