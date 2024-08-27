@@ -16,7 +16,6 @@ const ProductList = ({products, onViewDetails})=>
                             />
                         </li>
                 ))}
-                </ul>
             </div>
         )
     };
