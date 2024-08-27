@@ -3,6 +3,10 @@ import ProductList from './components/ProductList';
 import Title from './components/Title';
 import ProductDetails from './components/ProductDetails';
 import Cart from './components/Cart';
+import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button} from "@nextui-org/react";
+
+
+
 
 function App() {
     const products = [{id: 0, image:'https://samsonite.com.co/cdn/shop/products/80c654d46cdac12ef0a5e4fdb4a95930379bfc0629c07ee72d90d75b85d74536.jpg?v=1679412108' , name: 'Bolso Clásico de Cuero',price: 1200,description: 'Bolso de cuero genuino con diseño clásico y elegante.'},
@@ -38,7 +42,42 @@ function App() {
     
     
   return (
+
     <>
+    
+    <Navbar position="static">
+      <NavbarBrand>
+        {/* <AcmeLogo />
+        <p className="font-bold text-inherit">ACME</p> */}
+      </NavbarBrand>
+      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+        <NavbarItem>
+          <Link color="foreground" href="#">
+            Features
+          </Link>
+        </NavbarItem>
+        <NavbarItem isActive>
+          <Link href="#" aria-current="page">
+            Customers
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link color="foreground" href="#">
+            Integrations
+          </Link>
+        </NavbarItem>
+      </NavbarContent>
+      <NavbarContent justify="end">
+        <NavbarItem className="hidden lg:flex">
+          <Link href="#">Login</Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Button as={Link} color="primary" href="#" variant="flat">
+            Sign Up
+          </Button>
+        </NavbarItem>
+      </NavbarContent>
+    </Navbar>
       <div>
         <Title/>
         <ProductList
