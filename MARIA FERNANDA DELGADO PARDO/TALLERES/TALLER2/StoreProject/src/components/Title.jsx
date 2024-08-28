@@ -9,7 +9,6 @@ const Title = ()=>{
         <Navbar shouldHideOnScroll id="Navbar" className="text-stone-50 shadow-md" >
         <NavbarBrand>
           <Button  className="bg-red-400 text-stone-50 shadow_xl" > Carrito
-
           </Button>
         </NavbarBrand>
         <NavbarContent className="hidden sm:flex gap-4" justify="center">

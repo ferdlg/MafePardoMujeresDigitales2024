@@ -45,3 +45,6 @@ b{
   padding: 1%;
   margin: 1% 0% 1% 0%;
 }
+li{
+  list-style: none;
+}
