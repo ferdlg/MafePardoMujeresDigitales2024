@@ -31,7 +31,7 @@ Button{
 }
 
 #div-list{
-  margin: 5% 5% 0% 5%;
+  margin: 25px 25px 0% 25px;
   background-color: var(--color-content-list);
   padding: 5%;
   border-radius: 10px;
@@ -47,4 +47,8 @@ b{
 }
 li{
   list-style: none;
+}
+
+#Cart{
+  margin: 10px;
 }

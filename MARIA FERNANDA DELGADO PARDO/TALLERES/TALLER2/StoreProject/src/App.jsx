@@ -1,13 +1,8 @@
-import { useState } from 'react'
-import ProductList from './components/ProductList';
-import Title from './components/Title';
-import ProductDetails from './components/ProductDetails';
-import Cart from './components/Cart';
-import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button} from "@nextui-org/react";
-
-
-
-
+import { useState } from 'react';
+import TitleStore from './components/Store/Title/Title';
+import ProductDetails from './components/core/ProductDetails/ProductDetails';
+import ProductList from './components/Store/ProductList/ProductList';
+import Cart from './components/core/Cart/Cart';
 
 function App() {
     const products = [{id: 0, image:'https://samsonite.com.co/cdn/shop/products/80c654d46cdac12ef0a5e4fdb4a95930379bfc0629c07ee72d90d75b85d74536.jpg?v=1679412108' , name: 'Bolso Clásico de Cuero',price: 1200,description: 'Bolso de cuero genuino con diseño clásico y elegante.'},
@@ -48,15 +43,16 @@ function App() {
 
     <>
       <div>
-        <Title/>
-        <ProductList
-          products={products}
-          onViewDetails={onViewDetails}
+        <TitleStore
         />
         <Cart
           productsCart={cart}
           removeProduct={RemoveFromCart}
-        /> 
+        />
+        <ProductList
+          products={products}
+          onViewDetails={onViewDetails}
+        />
       
         { selectProduct &&
         (<ProductDetails 
@@ -71,4 +67,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

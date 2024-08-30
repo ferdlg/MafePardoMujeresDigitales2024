@@ -12,8 +12,7 @@ const Cart = ({productsCart, removeProduct})=>
     
     return(
         <>
-        <Button onPress={onOpen}  className="bg-red-500 text-stone-50" > Carrito
-
+        <Button onPress={onOpen}  className="bg-red-500 text-stone-50" id="Cart"> Carrito
         </Button>
         <Modal 
           backdrop="opaque" 
