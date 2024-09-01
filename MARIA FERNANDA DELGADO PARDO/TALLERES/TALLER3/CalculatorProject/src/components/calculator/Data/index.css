@@ -1,0 +1,16 @@
+.calculator-container{
+    display: block;
+}
+.calculator-container h1{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 5rem;
+    color: white;
+}
+.iframe-container{
+    margin: 10px;
+}
+.iframe-container iframe{
+    width: 100%;
+    border: 0;
+    
+}

@@ -1,8 +1,22 @@
-# React + Vite
+# Conversion de grados C° a F°
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+Esta es una calculadora simple que convierte temperaturas de grados Celsius a grados Fahrenheit. El propósito de este proyecto es proporcionar una herramienta rápida y fácil para convertir entre estas dos escalas de temperatura.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Fórmula de Conversión
+
+La fórmula utilizada para convertir grados Celsius a Fahrenheit es:
+
+\[
+F = (C \times 1.8) + 32
+\]
+
+Donde:
+- `F` es la temperatura en grados Fahrenheit.
+- `C` es la temperatura en grados Celsius.
+
+## Comandos 
+
+- npm install
+- npm update
+- npm run dev 
