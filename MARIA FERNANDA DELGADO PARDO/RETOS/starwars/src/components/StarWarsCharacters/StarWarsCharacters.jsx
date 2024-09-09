@@ -8,18 +8,25 @@ function StarWarsCharacters() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [currentPage, setCurrentPage] = useState('https://swapi.dev/api/people/');
-    const [timeout, setTimeOut]
+    const [timeoutId, setTimeOutId] = useState(null);
     const [nextPage, setNextPage] = useState(null);
+    const [searchTerm, setSearchTerm]  = useState('');
     const [prevPage, setPrevPage] = useState(null);
+    const [isFetching, setIsFetching] = useState(false);
+    const [pageVisited, setPageVisited] = useState([]);
 
-    const fetchCharacters = async (pageUrl) => {
+    const fetchCharacters = async (pageUrl, reset = false) => {
         try {
             setLoading(true); // Activar el loader antes de hacer la solicitud
             const response = await fetch(pageUrl);
             const data = await response.json();
-            setCharacters(data.results);
+            setCharacters((prevCharacters)=> reset ? data.results : [...prevCharacters, ...data.results]);
+            setPageVisited([...pageVisited, data.next])
+            if(pageVisited.length === 0){
+                setNextPage(data.next);
+                setPageVisited([...pageVisited, data.next])
+            }
             setNextPage(data.next);
-            setPrevPage(data.previous);
         } catch (err) {
             setError(err);
         } finally {
@@ -28,20 +35,27 @@ function StarWarsCharacters() {
     };
 
     useEffect(() => {
-        fetchCharacters(currentPage);
+        fetchCharacters(currentPage, true);
     }, [currentPage]);
 
-    const handlePrevious = () => {
-        if (prevPage) {
-            setCurrentPage(prevPage);
-        }
-    };
+    useEffect(()=>{
+        const handleScroll = () => {
+            if (window.innerHeight + document.documentElement.scrollTop > document.documentElement.offsetHeight - 100 && nextPage && !isFetching )
+                setIsFetching(true);
+        };
+    },[nextPage, isFetching])
 
-    const handleNext = () => {
-        if (nextPage) {
-            setCurrentPage(nextPage);
-        }
-    };
+    // const handlePrevious = () => {
+    //     if (prevPage) {
+    //         setCurrentPage(prevPage);
+    //     }
+    // };
+
+    // const handleNext = () => {
+    //     if (nextPage) {
+    //         setCurrentPage(nextPage);
+    //     }
+    // };
 
     if (loading) {
         return <Loader />; // Mostrar el loader mientras se cargan los datos
@@ -57,18 +71,34 @@ function StarWarsCharacters() {
     };
 
     const handleSearch = (e) => {
-        const searchValue = e.target.value
-        searchCharacter(searchValue);
+        const searchValue = e.target.value;
+        setSearchTerm(searchValue);
 
         if (timeoutId){
             clearTimeout(timeoutId)
         }
+
+        const newTimeOutId = setTimeOutId(()=>{
+            searchCharacter(searchValue);
+        }, 500);
+
+        setTimeOutId(newTimeOutId);
     }
 
     const searchCharacter = async(character) =>{
         return fetch(`https://swapi.dev/api/people/?search=${character}`)
                 .then((response) => (response.json()))
-                .then(data => console.log(data) )
+                .then(data => {
+                    setCharacters(data.results);
+                    setNextPage(null);
+                } )
+                .catch((err)=>{
+                    setError(err);
+                });
+    };
+
+    if( loading && characters.length ===0){
+        return <Loader />
     }
 
     return (
@@ -79,7 +109,7 @@ function StarWarsCharacters() {
                 type='text'
                 name='personaje' 
                 placeholder='Busquemos tu personaje'
-                value={searchValue} 
+                value={searchTerm} 
                 onChange={handleSearch}></input>
             </div>
             <div className="character-list">
