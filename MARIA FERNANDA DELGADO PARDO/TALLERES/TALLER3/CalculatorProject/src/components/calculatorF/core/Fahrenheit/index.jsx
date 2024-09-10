@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import '../../calculator/Data/index.css'
-import Input from "../Input";
+import '../../../calculatorF/calculator/Data/index.css'
+import Input from "../../../Input";
 
 const DegreeFahrenheit = ({celsius}) => {
     
