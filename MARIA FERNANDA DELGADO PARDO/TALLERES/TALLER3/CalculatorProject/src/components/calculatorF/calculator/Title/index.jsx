@@ -6,7 +6,7 @@ const Title = ()=>{
             <div className="calculator-container">
             <h1>Calculator</h1>
             <div className="iframe-container">
-                <img src="https://giphy.com/stickers/NY1-transparent-3OO53le5KlQ4I9mzcd" alt="GIF" />
+                <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWZrZnlpMjIwOGI0d3gwdTVncmJ3a2xiaHc5NGxjcmdrOHZ5OTZteSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/3OO53le5KlQ4I9mzcd/giphy.webp" alt="GIF" />
             </div>
             </div>
 
@@ -14,4 +14,4 @@ const Title = ()=>{
     )
 }
 
-export default Title;
+export default Title;  
