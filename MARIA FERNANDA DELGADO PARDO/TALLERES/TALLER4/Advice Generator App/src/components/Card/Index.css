@@ -1,0 +1,40 @@
+
+.Card{
+    background-color: var(--color-dark-grayish-blue);
+    border-radius: 10px;
+    text-align: center;
+    max-width: 320px;
+}
+.Card-Section{
+    max-width: 100%;
+}
+.Card-Section h3{
+    color: var(--color-primary-neon-green);
+}
+.Card-Section-Figure img{
+    max-width: 100%;
+}
+
+#destop{
+    display: none;
+}
+#mobile{
+    display: none;
+}
+
+@media(min-width:1440px){
+    #desktop{
+        display: block;
+    }
+    #mobile{
+        display: none;
+    }
+}
+@media(max-width:375px){
+    #desktop{
+        display: none;
+    }
+    #mobile{
+        display: block;
+    }
+}

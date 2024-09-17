@@ -1,17 +1,17 @@
-
+import './Index.css';
 export const Card = (props) =>{
-    const [adviceNumber, adviceDescription] = props
+    const {adviceNumber, adviceDescription} = props
     return(
         <article className="Card">
-            <section className="Card-Section-P">
-                <h3>{adviceNumber}</h3>
-                <p>{adviceDescription}</p>
+            <section className="Card-Section">
+                <h3>ADVICE #{adviceNumber}</h3>
+                <p>"{adviceDescription}"</p>
             </section>
-            <section className="Card-Section-Img">
-                <figure>
-                    <img src ='../assets/images/pattern-divider-desktop.svg' alt="divider-desktop" />
-                    <img src = '../assets/images/pattern-divider-mobile.sgv'alt="divider-mobile"/>
-                    <img src='../assets/images/icon-dice.svg' alt="icon-dado" />
+            <section className="Card-Section">
+                <figure className='Card-Section-Figure'>
+                    <img src ="src/assets/images/pattern-divider-desktop.svg" id='desktop' alt="divider-desktop" />
+                    <img src ="src/assets/images/pattern-divider-mobile.svg" id='mobile' alt="divider-mobile"/>
+                    <img src="src/assets/images/icon-dice.svg" alt="icon-dado" id='dado' />
                 </figure>
             </section>
         </article>
