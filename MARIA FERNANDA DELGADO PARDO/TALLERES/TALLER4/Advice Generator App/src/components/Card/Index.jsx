@@ -1,11 +1,11 @@
 import './Index.css';
 export const Card = (props) =>{
-    const {adviceNumber, adviceDescription} = props
+    const {slip} = props
     return(
         <article className="Card">
             <section className="Card-Section">
-                <h3>ADVICE #{adviceNumber}</h3>
-                <p>"{adviceDescription}"</p>
+                <h3>ADVICE #{slip.id}</h3>
+                <p>"{slip.advice}"</p>
             </section>
             <section className="Card-Section">
                 <figure className='Card-Section-Figure'>

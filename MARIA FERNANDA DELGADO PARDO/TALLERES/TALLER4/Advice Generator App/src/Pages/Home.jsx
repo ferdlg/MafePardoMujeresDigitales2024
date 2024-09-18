@@ -10,19 +10,13 @@ export const Home = ()=>{
     if(error){
         return ("Error:", error.message)
     }
-    const slip = Object.values(data);
-    console.log(slip)
+    
+    console.log(data.slip)
     return(
         <Layout>
-            {slip.map((advice)=>{
-                return(
-                    <Card
-                    key = {advice.id}
-                    adviceNumber = {advice.id}
-                    adviceDescription = {advice.advice}
-                    />
-                )
-            })}
+            <Card
+            slip = {data.slip}
+            />
         </Layout>
     )
 }
