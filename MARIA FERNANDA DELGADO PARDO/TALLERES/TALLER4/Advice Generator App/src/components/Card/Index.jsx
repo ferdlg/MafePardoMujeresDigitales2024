@@ -4,7 +4,7 @@ export const Card = (props) =>{
     return(
         <article className="Card">
             <section className="Card-Section">
-                <h3>ADVICE #{slip.id}</h3>
+                <h5>ADVICE #{slip.id}</h5>
                 <p>"{slip.advice}"</p>
             </section>
             <section className="Card-Section">

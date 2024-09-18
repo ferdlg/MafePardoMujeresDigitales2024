@@ -1,7 +1,14 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 @font-face {
   font-family: "Manrope";
-  src: url(https://fonts.google.com/specimen/Manrope);
+  src: url('https://fonts.gstatic.com/s/manrope/v15/xn7_YHE41ni1AdIRqAuZuw1Bx9mbZk59E9_P-bnBeA.woff2');
+  font-weight: 800;
 }
+
 :root{
   --color-primary-ligth-cyan:hsl(193, 38%, 86%);
   --color-primary-neon-green:hsl(150, 100%, 66%);
@@ -11,11 +18,12 @@
 }
 
 body{
-  font-size: 28px;
-  font-weight: 800;
+  display: flex;
   background-color: var(--color-dark-blue);
   color: var(--color-primary-ligth-cyan);
-  display: block;
-  justify-content: center;
-  justify-items: center;
-}
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: "Manrope", sans-serif;
+  }
+
