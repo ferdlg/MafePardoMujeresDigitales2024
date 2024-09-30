@@ -1,42 +1,89 @@
-
-.Card{
-    background-color: var(--color-dark-grayish-blue);
-    border-radius: 10px;
-    text-align: center;
+.card {
     max-width: 320px;
-    padding: 5%;
+    text-align: center;
+    display: flex;
+    margin: 0 auto; 
+    position: relative;
 }
-.Card-Section{
-    max-width: 100%;
+
+.card__section {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: var(--color-dark-grayish-blue);
+    padding: 2rem;
+    width: 100%; 
 }
-.Card-Section h5{
+
+.card__advice-title {
+    display: block;
     color: var(--color-primary-neon-green);
-    font-family: 'Manrope', sans-serif;
+    margin-bottom: 1rem;
 }
-.Card-Section-Figure img{
+.card__advice-text{
+    margin-bottom: 1rem;
+}
+.card__figure {
+    display: block;
+    justify-content: center;
     max-width: 100%;
+    margin-bottom: 1rem; 
 }
 
-#destop{
-    display: none;
+.card__button {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 14px;
+    border-radius: 50px;
+    background-color: var(--color-primary-neon-green);
+    border: none;
+    position: absolute; 
+    z-index:2;
 }
-#mobile{
+
+.card__button:hover {
+    box-shadow:0 0 1.5em 0.25em var(--color-primary-neon-green);
+}
+
+.card__button-icon{
+    width: 20px;
+}
+.card__figure-image--desktop {
     display: none;
 }
 
-@media(min-width:1440px){
-    #desktop{
+.card__figure-image--mobile {
+    display: none;
+}
+
+@media (min-width: 375px) {
+    .card__figure-image--desktop {
         display: block;
+        width: 100%; 
     }
-    #mobile{
+
+    .card__figure-image--mobile {
         display: none;
+    }
+
+    .card__button{
+        top: 11rem;
     }
 }
-@media(max-width:375px){
-    #desktop{
+
+@media (max-width: 375px) {
+    .card__figure-image--desktop {
         display: none;
     }
-    #mobile{
+
+    .card__figure-image--mobile {
         display: block;
+        width: 100%;
+    }
+    .card__button {
+        top: 12.5rem;
     }
 }
