@@ -1,8 +1,8 @@
 
 export const Layout = ({children}) =>{
     return(
-        <main className="Layout">
+        <div className="Layout">
             {children}
-        </main>
+        </div>
     )
 }
