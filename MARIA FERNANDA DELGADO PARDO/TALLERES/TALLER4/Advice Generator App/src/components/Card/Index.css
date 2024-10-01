@@ -1,13 +1,13 @@
 .card {
     max-width: 320px;
     text-align: center;
-    display: flex;
     margin: 0 auto; 
-    position: relative;
 }
 
 .card__section {
     display: flex; 
+    position: relative;
+    min-height: 27vh;
     flex-direction: column; 
     justify-content: center;
     align-items: center;
@@ -22,8 +22,15 @@
     color: var(--color-primary-neon-green);
     margin-bottom: 1rem;
 }
-.card__advice-text{
-    margin-bottom: 1rem;
+.card__container{
+    display: flex;
+    height: 75%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.card__container-text{
+    font-weight: 600;
 }
 .card__figure {
     display: block;
@@ -37,11 +44,11 @@
     justify-content: center; 
     align-items: center;
     padding: 14px;
-    border-radius: 50px;
+    border-radius: 50%;
     background-color: var(--color-primary-neon-green);
     border: none;
-    position: absolute; 
-    z-index:2;
+    position: absolute;
+    box-sizing: border-box;
 }
 
 .card__button:hover {
@@ -83,7 +90,5 @@
         display: block;
         width: 100%;
     }
-    .card__button {
-        top: 12.5rem;
-    }
+  
 }
