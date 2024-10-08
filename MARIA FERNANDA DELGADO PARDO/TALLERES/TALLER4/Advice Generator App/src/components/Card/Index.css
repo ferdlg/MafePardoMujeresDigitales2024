@@ -1,0 +1,94 @@
+.card {
+    max-width: 320px;
+    text-align: center;
+    margin: 0 auto; 
+}
+
+.card__section {
+    display: flex; 
+    position: relative;
+    min-height: 27vh;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: var(--color-dark-grayish-blue);
+    padding: 2rem;
+    width: 100%; 
+}
+
+.card__advice-title {
+    display: block;
+    color: var(--color-primary-neon-green);
+    margin-bottom: 1rem;
+}
+.card__container{
+    display: flex;
+    height: 75%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.card__container-text{
+    font-weight: 600;
+}
+.card__figure {
+    display: block;
+    justify-content: center;
+    max-width: 100%;
+    margin-bottom: 1rem; 
+}
+
+.card__button {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 14px;
+    border-radius: 50%;
+    background-color: var(--color-primary-neon-green);
+    border: none;
+    position: absolute;
+    box-sizing: border-box;
+}
+
+.card__button:hover {
+    box-shadow:0 0 1.5em 0.25em var(--color-primary-neon-green);
+}
+
+.card__button-icon{
+    width: 20px;
+}
+.card__figure-image--desktop {
+    display: none;
+}
+
+.card__figure-image--mobile {
+    display: none;
+}
+
+@media (min-width: 375px) {
+    .card__figure-image--desktop {
+        display: block;
+        width: 100%; 
+    }
+
+    .card__figure-image--mobile {
+        display: none;
+    }
+
+    .card__button{
+        top: 11rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .card__figure-image--desktop {
+        display: none;
+    }
+
+    .card__figure-image--mobile {
+        display: block;
+        width: 100%;
+    }
+  
+}
