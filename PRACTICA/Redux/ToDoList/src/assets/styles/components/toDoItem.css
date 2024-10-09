@@ -1,0 +1,12 @@
+.container__item{
+    display: flex;
+    flex-direction: column;
+    background-color: #534b62;
+    padding: 2rem;
+    margin: 1rem;
+    border-radius: 0.1em;
+    color: #ffffff;
+}
+.container__item:hover{
+    box-shadow: 0rem 0.3rem 0.6rem 0.3rem #1b1725;
+}
