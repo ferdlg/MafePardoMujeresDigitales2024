@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
+@import './App.css';
+:root {
+  --polynesian-blue: #024F9Aff;
+  --black: #000400ff;
+  --engineering-orange: #C4231Bff;
+  --seasalt: #F7F6F7ff;
+  --rich-black: #000816ff;
+  font-family: "PT+Sans+Narrow", sans-serif;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--black);
+  color: var(--seasalt);
+}
